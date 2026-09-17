@@ -1252,7 +1252,9 @@
     throw lastErr;
   }
 
-  const API_URL = "http://localhost:8000/api/site-risk";
+  // const API_URL = "http://localhost:8000/api/site-risk";
+
+  const API_URL = "/api/site-risk"
 
   function riskClass(status) {
     if (status === "LOW") return "risk-low";
@@ -1412,7 +1414,8 @@
   }
 
   // ---------------- Resource dashboard ----------------
-  const RESOURCE_API_URL = "http://localhost:8000/api/resource-dashboard";
+  // const RESOURCE_API_URL = "http://localhost:8000/api/resource-dashboard";
+  const RESOURCE_API_URL = "/api/resource-dashboard"
 
   function statusClass(status) {
     if (status === "Available") return "status-available";
@@ -1539,7 +1542,8 @@
   }
 
   // ---------------- Schedule report ----------------
-  const SCHEDULE_API_URL = "http://localhost:8000/api/schedule-report";
+  // const SCHEDULE_API_URL = "http://localhost:8000/api/schedule-report";
+  const SCHEDULE_API_URL = "/api/schedule-report";
 
   async function loadScheduleReport() {
     const card = document.getElementById("schedule-card");
@@ -1654,7 +1658,8 @@
   }
 
   // ---------------- Cost report ----------------
-  const COST_API_URL = "http://localhost:8000/api/cost-report";
+  // const COST_API_URL = "http://localhost:8000/api/cost-report";
+  const COST_API_URL = "/api/cost-report";
 
   async function loadCostReport() {
     const card = document.getElementById("cost-card");
@@ -1831,7 +1836,8 @@
   }
 
   // ---------------- Complaint report ----------------
-  const COMPLAINT_API_URL = "http://localhost:8000/api/complaint-report";
+  // const COMPLAINT_API_URL = "http://localhost:8000/api/complaint-report";
+  const COMPLAINT_API_URL = "/api/complaint-report";
 
   async function loadComplaintReport() {
     const card = document.getElementById("complaint-card");
@@ -1943,7 +1949,8 @@
   }
 
   // ---------------- Insurance report ----------------
-  const INSURANCE_API_URL = "http://localhost:8000/api/insurance-report";
+  // const INSURANCE_API_URL = "http://localhost:8000/api/insurance-report";
+  const INSURANCE_API_URL = "/api/insurance-report";
 
   async function loadInsuranceReport() {
     const card = document.getElementById("insurance-card");
@@ -2222,9 +2229,11 @@
   // FastAPI runs on port 8000. If this HTML is opened with
   // VS Code Live Server (usually port 5500), use FastAPI instead of the
   // frontend server. If FastAPI itself serves this page, use the same origin.
-  const API_BASE = window.location.port === "8000"
-      ? window.location.origin
-      : "http://127.0.0.1:8000";
+  // const API_BASE = window.location.port === "8000"
+  //     ? window.location.origin
+  //     : "http://127.0.0.1:8000";
+
+  const API_BASE = window.location.origin
 
   let cameraStream = null;
   let capturedBlob = null;
